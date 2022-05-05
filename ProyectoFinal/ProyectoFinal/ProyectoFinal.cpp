@@ -45,61 +45,62 @@ bool anim2= true;
 
 
 
-int main( )
+int main()
 {
     // Init GLFW
-    glfwInit( );
+    glfwInit();
     // Set all the required options for GLFW
    // glfwWindowHint( GLFW_CONTEXT_VERSION_MAJOR, 3 );
     //glfwWindowHint( GLFW_CONTEXT_VERSION_MINOR, 3 );
    // glfwWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
     //glfwWindowHint( GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE );
-   glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
-    
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
     // Create a GLFWwindow object that we can use for GLFW's functions
-    GLFWwindow *window = glfwCreateWindow( WIDTH, HEIGHT, "Adaptacion,carga de modelos y camara sintetica", nullptr, nullptr );
-    
-    if ( nullptr == window )
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Adaptacion,carga de modelos y camara sintetica", nullptr, nullptr);
+
+    if (nullptr == window)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate( );
-        
+        glfwTerminate();
+
         return EXIT_FAILURE;
     }
-    
-    glfwMakeContextCurrent( window );
-    
-    glfwGetFramebufferSize( window, &SCREEN_WIDTH, &SCREEN_HEIGHT );
-    
+
+    glfwMakeContextCurrent(window);
+
+    glfwGetFramebufferSize(window, &SCREEN_WIDTH, &SCREEN_HEIGHT);
+
     // Set the required callback functions
-    glfwSetKeyCallback( window, KeyCallback );
-    glfwSetCursorPosCallback( window, MouseCallback );
-    
+    glfwSetKeyCallback(window, KeyCallback);
+    glfwSetCursorPosCallback(window, MouseCallback);
+
     // GLFW Options
     //glfwSetInputMode( window, GLFW_CURSOR, GLFW_CURSOR_DISABLED );
-    
+
     // Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
     glewExperimental = GL_TRUE;
     // Initialize GLEW to setup the OpenGL Function pointers
-    if ( GLEW_OK != glewInit( ) )
+    if (GLEW_OK != glewInit())
     {
         std::cout << "Failed to initialize GLEW" << std::endl;
         return EXIT_FAILURE;
     }
-    
+
     // Define the viewport dimensions
-    glViewport( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT );
-    
+    glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
     // OpenGL options
-    glEnable( GL_DEPTH_TEST );
-    
+    glEnable(GL_DEPTH_TEST);
+
     // Setup and compile our shaders
-    Shader shader( "Shaders/modelLoading.vs", "Shaders/modelLoading.frag" );
-    
+    Shader shader("Shaders/modelLoading.vs", "Shaders/modelLoading.frag");
+
     // Load models
     Model escritorio((char*)"Models/Pokeball2/escritorio.obj");
     Model silla((char*)"Models/Pokeball2/silla.obj");
     Model compu((char*)"Models/computadora/computadora.obj");
+    Model cohete((char*)"Models/cohete/cohete.obj");
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
   
@@ -149,6 +150,14 @@ int main( )
         //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         compu.Draw(shader);
+
+        model = glm::mat4(1);
+        model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
+        model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.8f, 0.0f));
+         //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        cohete.Draw(shader);
 
         // Swap the buffers
         glfwSwapBuffers( window );

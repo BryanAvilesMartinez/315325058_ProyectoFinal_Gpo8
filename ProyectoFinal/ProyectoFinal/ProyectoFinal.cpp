@@ -57,7 +57,7 @@ int main()
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
     // Create a GLFWwindow object that we can use for GLFW's functions
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Adaptacion,carga de modelos y camara sintetica", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Casa Jimmy Neutron", nullptr, nullptr);
 
     if (nullptr == window)
     {
@@ -101,6 +101,11 @@ int main()
     Model silla((char*)"Models/Pokeball2/silla.obj");
     Model compu((char*)"Models/computadora/computadora.obj");
     Model cohete((char*)"Models/cohete/cohete.obj");
+    Model bag((char*)"Models/extraterrestre1/bag.obj");
+    Model carrusel((char*)"Models/planetario/carrusel.obj");
+    Model Librero((char*)"Models/librero/librero.obj");
+    Model Libro((char*)"Models/librero/libro.obj");
+    Model Pizarra((char*)"Models/pizarron/pizarra.obj");
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
   
@@ -151,13 +156,54 @@ int main()
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         compu.Draw(shader);
 
+
+
         model = glm::mat4(1);
         model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
         model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-        model = glm::translate(model, glm::vec3(0.0f, 0.8f, 0.0f));
+        model = glm::translate(model, glm::vec3(0.0f, 0.9f, 0.0f));
          //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         cohete.Draw(shader);
+
+        model = glm::mat4(1);
+        model = glm::scale(model, glm::vec3(1.5f, 2.0f, 1.5f));
+       // model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(-3.1f, -1.0f, 0.5f));
+        //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        bag.Draw(shader);
+
+        model = glm::mat4(1);
+        model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+        model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(1.0f, 2.0f, 2.2f));
+        //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        carrusel.Draw(shader);
+
+        model = glm::mat4(1);
+        
+        model = glm::translate(model, glm::vec3(0.1f, -0.1f, -2.2f));
+        //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Librero.Draw(shader);
+
+        model = glm::mat4(1);
+        //model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
+        model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(7.0f, 2.2f, 0.0f));
+        //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Libro.Draw(shader);
+
+        model = glm::mat4(1);
+        //model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
+        model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(7.0f, 2.2f, 0.0f));
+        //model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        Pizarra.Draw(shader);
 
         // Swap the buffers
         glfwSwapBuffers( window );

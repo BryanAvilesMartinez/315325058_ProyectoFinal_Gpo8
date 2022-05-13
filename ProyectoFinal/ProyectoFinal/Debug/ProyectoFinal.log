@@ -1,12 +1,10 @@
-﻿  ProyectoFinal.cpp
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(112,30): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(242,17): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(243,17): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(247,21): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(248,21): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(250,13): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(251,13): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+﻿  JimmyNeutron.cpp
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(161,30): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(349,27): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(460,17): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(461,17): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(465,21): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(466,21): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(468,13): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\ProyectoFinal\JimmyNeutron.cpp(469,13): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   ProyectoFinal.vcxproj -> C:\Users\bryan\Desktop\repositorio\315325058_ProyectoFinal_Gpo8\ProyectoFinal\Debug\ProyectoFinal.exe
